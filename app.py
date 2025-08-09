@@ -1,9 +1,11 @@
 import os
 from flask import Flask, render_template, request, redirect, url_for
 from werkzeug.utils import secure_filename
-from model import fish_analysis
+from model import fish_analysis  # Make sure you have this
 
 app = Flask(__name__)
+
+# Folder for uploads and static certificate images
 UPLOAD_FOLDER = os.path.join('static', 'uploads')
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -25,6 +27,7 @@ def analyze():
             filename = secure_filename(f.filename)
             path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
 
+            # Avoid overwriting duplicate filenames
             base, ext = os.path.splitext(filename)
             counter = 1
             while os.path.exists(path):
@@ -35,12 +38,13 @@ def analyze():
             f.save(path)
             saved_paths.append(path)
 
-    # Run analysis
+    # Run fish beauty analysis
     results = fish_analysis.analyze(saved_paths, names)
 
     if not results:
         return "No competitors were provided."
 
+    # Pick winner (highest total_score)
     winner_index = max(range(len(results)), key=lambda i: results[i]['total_score'])
     winner_name = results[winner_index]['name']
 
@@ -54,6 +58,9 @@ def analyze():
 
 @app.route('/certificate/<winner_name>')
 def certificate(winner_name):
+    """
+    Display the cute fish-themed certificate for the winner.
+    """
     return render_template('certificate.html', name=winner_name)
 
 

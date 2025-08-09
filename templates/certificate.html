@@ -1,68 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Certificate</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fish Beauty Competition Certificate</title>
     <style>
         body {
             font-family: 'Times New Roman', serif;
-            background-color: #fdfcf5;
+            background-color: #fcfaf0;
             text-align: center;
-            padding: 50px;
         }
         .certificate {
             border: 15px solid gold;
             padding: 50px;
-            width: 800px;
-            margin: auto;
-            background: repeating-linear-gradient(
-                white, white 28px,
-                #fff9e6 28px, #fff9e6 30px
-            );
-            position: relative;
-        }
-        .medal {
-            width: 50px;
-            margin-bottom: 10px;
+            margin: 50px auto;
+            width: 80%;
+            background-color: white;
+            background-image: radial-gradient(gold 1px, transparent 1px);
+            background-size: 20px 20px;
         }
         h1 {
-            font-size: 36px;
-            font-weight: bold;
+            font-size: 2.5rem;
             color: goldenrod;
+            margin-top: 0;
         }
         h2 {
-            font-size: 22px;
-            margin-top: 30px;
-            font-weight: bold;
+            font-size: 1.5rem;
+            margin-top: 20px;
         }
         .name {
-            font-size: 32px;
+            font-size: 3rem;
             font-weight: bold;
-            margin-top: 10px;
         }
-        .desc {
-            font-size: 18px;
-            margin-top: 10px;
+        .medal {
+            font-size: 50px;
+            margin-bottom: 20px;
         }
-        .seal {
-            border: 3px solid gold;
+        .footer {
+            margin-top: 50px;
+        }
+        .official {
+            border: 3px solid goldenrod;
             border-radius: 50%;
             padding: 20px;
             display: inline-block;
-            margin-top: 40px;
-            transform: rotate(-15deg);
             color: goldenrod;
-            font-weight: bold;
-        }
-        .signature {
-            margin-top: 60px;
-            font-size: 16px;
-            border-top: 2px solid black;
-            display: inline-block;
-            padding-top: 5px;
+            font-style: italic;
+            transform: rotate(-15deg);
         }
     </style>
 </head>
 <body>
     <div class="certificate">
-        <img src="https://cdn-icons-png.flaticon.com/512/2583/2583340.png" class="medal">
-
+        <div class="medal">🏅</div>
+        <h1>Fish Beauty Competition</h1>
+        <h2>Presented to</h2>
+        <div class="name">{{ name }}</div>
+        <p>Winner of FishNova 2025</p>
+        
+        <div class="footer">
+            <div class="official">Official</div>
+            <p>__________________________</p>
+            <p>Signature</p>
+        </div>
+    </div>
+</body>
+</html>
