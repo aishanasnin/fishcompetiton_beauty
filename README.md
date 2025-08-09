@@ -30,12 +30,18 @@ Tools: Git, VS Code, GitHub
 For Hardware:
 
 No special hardware needed — just a computer and fish photos.
+screenshot:<img width="1366" height="768" alt="Screenshot 2025-08-09 170247" src="https://github.com/user-attachments/assets/9e68003c-fb03-4018-89d2-b38c69f59258" />
+
+<img width="1366" height="768" alt="Screenshot 2025-08-09 170319" src="https://github.com/user-attachments/assets/015eec8d-0d0e-4ce7-ae8a-4d25687ab37f" />
+
+<img width="1366" height="768" alt="Screenshot 2025-08-09 170341" src="https://github.com/user-attachments/assets/d377e86b-ff4e-45c6-b41e-cb82006b9854" />
 
 
 Implementation
-For Software:
+For Software: 
 
-Installation
+Installation 
+
 git clone https://github.com/aishanasnin/fishcompetiton_beauty.git
 cd fishcompetiton_beauty
 python -m venv venv
@@ -46,3 +52,5 @@ pip install -r requirements.txt
 
 Run
 python app.py
+
+
