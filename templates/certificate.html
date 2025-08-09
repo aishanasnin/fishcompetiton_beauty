@@ -99,38 +99,3 @@
   </div>
 </body>
 </html>
-        </div>
-        {% endfor %}
-    </main>
-    
-    <div class="confetti"></div>
-    
-    <script src="{{ url_for('static', filename='confetti.js') }}"></script>
-    <script>
-        function launchConfetti() {
-        // Your confetti launch logic here
-        }
-    </script>
-    
-    <style>
-        body {
-        font-family: Arial, sans-serif;
-        background: #f0f0f0;
-        margin: 0;
-        padding: 0;
-        }
-        header {
-        text-align: center;
-        padding: 20px;
-        background: #fff;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .slot-card {
-        background: white;
-        border-radius: 8px;
-        padding: 16px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        position: relative;
-        }
-        .winner-card {
-        border: 2px solid gold;
