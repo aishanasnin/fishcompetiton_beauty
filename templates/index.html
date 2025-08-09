@@ -1,0 +1,31 @@
+<!-- templates/index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>FishNova — Fish Beauty Competition 2025</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>FishNova — Fish Beauty & Fashion Competition 2025</h1>
+    <p>Upload your competitors (add as many as you want). Then run the competition.</p>
+  </header>
+
+  <main>
+    <form id="compForm" method="POST" action="{{ url_for('analyze') }}" enctype="multipart/form-data">
+      <div class="controls">
+        <button type="button" id="addBtn">+ Add Competitor</button>
+        <button type="button" id="removeBtn">− Remove Last</button>
+        <button type="submit" class="run-btn">Run Competition</button>
+      </div>
+
+      <div id="slots"></div>
+      <p class="hint">Tip: side-view close-ups with good lighting work best.</p>
+    </form>
+  </main>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
