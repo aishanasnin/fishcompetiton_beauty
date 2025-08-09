@@ -1,101 +1,68 @@
-<!-- templates/certificate.html -->
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>Certificate</title>
-  <style>
-    body {
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      background: #e0f7fa;
-      margin: 0;
-      padding: 0;
-    }
-    .certificate {
-      width: 1123px; /* A4 landscape */
-      height: 794px;
-      margin: 20px auto;
-      padding: 40px;
-      border: 12px solid gold;
-      border-radius: 20px;
-      background: white;
-      position: relative;
-      box-shadow: 0 0 30px rgba(0,0,0,0.3);
-    }
-    .logo {
-      width: 100px;
-      position: absolute;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    .fish-left, .fish-right {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 120px;
-    }
-    .fish-left {
-      left: -80px;
-    }
-    .fish-right {
-      right: -80px;
-    }
-    h1 {
-      font-size: 48px;
-      margin-top: 120px;
-      color: #ff9800;
-    }
-    h2 {
-      font-size: 36px;
-      margin: 20px 0;
-    }
-    .name {
-      font-size: 50px;
-      font-weight: bold;
-      color: #d32f2f;
-    }
-    p {
-      font-size: 22px;
-    }
-    .footer {
-      position: absolute;
-      bottom: 40px;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      padding: 0 60px;
-    }
-    .signature {
-      text-align: center;
-    }
-    .stamp {
-      width: 120px;
-    }
-  </style>
+    <title>Certificate</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            background-color: #fdfcf5;
+            text-align: center;
+            padding: 50px;
+        }
+        .certificate {
+            border: 15px solid gold;
+            padding: 50px;
+            width: 800px;
+            margin: auto;
+            background: repeating-linear-gradient(
+                white, white 28px,
+                #fff9e6 28px, #fff9e6 30px
+            );
+            position: relative;
+        }
+        .medal {
+            width: 50px;
+            margin-bottom: 10px;
+        }
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: goldenrod;
+        }
+        h2 {
+            font-size: 22px;
+            margin-top: 30px;
+            font-weight: bold;
+        }
+        .name {
+            font-size: 32px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .desc {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        .seal {
+            border: 3px solid gold;
+            border-radius: 50%;
+            padding: 20px;
+            display: inline-block;
+            margin-top: 40px;
+            transform: rotate(-15deg);
+            color: goldenrod;
+            font-weight: bold;
+        }
+        .signature {
+            margin-top: 60px;
+            font-size: 16px;
+            border-top: 2px solid black;
+            display: inline-block;
+            padding-top: 5px;
+        }
+    </style>
 </head>
 <body>
-  <div class="certificate">
-    <img src="{{ url_for('static', filename='images/fish_emblem.png') }}" class="logo" alt="Fish Emblem">
+    <div class="certificate">
+        <img src="https://cdn-icons-png.flaticon.com/512/2583/2583340.png" class="medal">
 
-    <img src="{{ url_for('static', filename='images/cute_fish_left.png') }}" class="fish-left" alt="Cute Fish Left">
-    <img src="{{ url_for('static', filename='images/cute_fish_right.png') }}" class="fish-right" alt="Cute Fish Right">
-
-    <h1>Certificate of Fish Beauty</h1>
-    <h2>Presented to</h2>
-    <div class="name">{{ name }}</div>
-    <p>Winner of FishNova 2025 — For outstanding beauty, charm, and style!</p>
-
-    <div class="footer">
-      <div class="signature">
-        <p>_________________</p>
-        <p>Competition Judge</p>
-      </div>
-      <div class="signature">
-        <img src="{{ url_for('static', filename='images/fish_stamp.png') }}" class="stamp" alt="Official Stamp">
-        <p>Official Seal</p>
-      </div>
-    </div>
-  </div>
-</body>
-</html>
