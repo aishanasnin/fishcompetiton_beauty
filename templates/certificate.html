@@ -1,13 +1,136 @@
 <!-- templates/certificate.html -->
 <!doctype html>
 <html>
-<head><meta charset="utf-8"><title>Certificate</title></head>
-<body style="font-family:Arial;text-align:center;padding:60px;">
-  <div style="border:6px double #222;padding:30px;display:inline-block;">
+<head>
+  <meta charset="utf-8">
+  <title>Certificate</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: #e0f7fa;
+      margin: 0;
+      padding: 0;
+    }
+    .certificate {
+      width: 1123px; /* A4 landscape */
+      height: 794px;
+      margin: 20px auto;
+      padding: 40px;
+      border: 12px solid gold;
+      border-radius: 20px;
+      background: white;
+      position: relative;
+      box-shadow: 0 0 30px rgba(0,0,0,0.3);
+    }
+    .logo {
+      width: 100px;
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .fish-left, .fish-right {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 120px;
+    }
+    .fish-left {
+      left: -80px;
+    }
+    .fish-right {
+      right: -80px;
+    }
+    h1 {
+      font-size: 48px;
+      margin-top: 120px;
+      color: #ff9800;
+    }
+    h2 {
+      font-size: 36px;
+      margin: 20px 0;
+    }
+    .name {
+      font-size: 50px;
+      font-weight: bold;
+      color: #d32f2f;
+    }
+    p {
+      font-size: 22px;
+    }
+    .footer {
+      position: absolute;
+      bottom: 40px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 60px;
+    }
+    .signature {
+      text-align: center;
+    }
+    .stamp {
+      width: 120px;
+    }
+  </style>
+</head>
+<body>
+  <div class="certificate">
+    <img src="{{ url_for('static', filename='images/fish_emblem.png') }}" class="logo" alt="Fish Emblem">
+
+    <img src="{{ url_for('static', filename='images/cute_fish_left.png') }}" class="fish-left" alt="Cute Fish Left">
+    <img src="{{ url_for('static', filename='images/cute_fish_right.png') }}" class="fish-right" alt="Cute Fish Right">
+
     <h1>Certificate of Fish Beauty</h1>
     <h2>Presented to</h2>
-    <h2 style="color:#d58500;">{{ name }}</h2>
-    <p>Winner of FishNova 2025</p>
+    <div class="name">{{ name }}</div>
+    <p>Winner of FishNova 2025 — For outstanding beauty, charm, and style!</p>
+
+    <div class="footer">
+      <div class="signature">
+        <p>_________________</p>
+        <p>Competition Judge</p>
+      </div>
+      <div class="signature">
+        <img src="{{ url_for('static', filename='images/fish_stamp.png') }}" class="stamp" alt="Official Stamp">
+        <p>Official Seal</p>
+      </div>
+    </div>
   </div>
 </body>
 </html>
+        </div>
+        {% endfor %}
+    </main>
+    
+    <div class="confetti"></div>
+    
+    <script src="{{ url_for('static', filename='confetti.js') }}"></script>
+    <script>
+        function launchConfetti() {
+        // Your confetti launch logic here
+        }
+    </script>
+    
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+        background: #f0f0f0;
+        margin: 0;
+        padding: 0;
+        }
+        header {
+        text-align: center;
+        padding: 20px;
+        background: #fff;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .slot-card {
+        background: white;
+        border-radius: 8px;
+        padding: 16px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        position: relative;
+        }
+        .winner-card {
+        border: 2px solid gold;
